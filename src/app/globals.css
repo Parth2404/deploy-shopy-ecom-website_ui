@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Neutrals — near-zero warmth, tinted a hair toward the brand pine hue (155) */
+  --color-canvas: oklch(0.985 0.004 155);
+  --color-surface: oklch(1 0 0);
+  --color-surface-2: oklch(0.968 0.006 155);
+  --color-surface-hover: oklch(0.948 0.008 155);
+  --color-border: oklch(0.898 0.008 155);
+  --color-border-strong: oklch(0.8 0.012 155);
+
+  --color-ink: oklch(0.19 0.014 155);
+  --color-ink-muted: oklch(0.4 0.016 155);
+  --color-ink-subtle: oklch(0.56 0.014 155);
+  --color-ink-on-accent: oklch(0.99 0.004 155);
+
+  /* Brand accent — deep pine/jade. Committed strategy: carries the identity,
+     distinct from Shopify's own lime-green and from fintech kelly-green. */
+  --color-accent: oklch(0.4 0.1 158);
+  --color-accent-hover: oklch(0.34 0.095 158);
+  --color-accent-active: oklch(0.3 0.09 158);
+  --color-accent-soft: oklch(0.94 0.035 158);
+  --color-accent-soft-strong: oklch(0.88 0.06 158);
+  --color-accent-ring: oklch(0.4 0.1 158 / 0.45);
+
+  /* Dark rail — mirrors the vendor dashboard's actual sidebar, reused in the
+     illustrative dashboard mockup so it reads as the real product. */
+  --color-rail: oklch(0.205 0.018 275);
+  --color-rail-ink: oklch(0.97 0.004 275);
+  --color-rail-ink-muted: oklch(0.62 0.02 275);
+  --color-rail-accent: oklch(0.6 0.13 158);
+
+  /* Semantic */
+  --color-success: var(--color-accent);
+  --color-success-soft: var(--color-accent-soft);
+  --color-danger: oklch(0.52 0.19 25);
+  --color-danger-soft: oklch(0.96 0.045 25);
+  --color-warning: oklch(0.55 0.14 75);
+  --color-warning-soft: oklch(0.96 0.055 85);
+
+  --font-sans: var(--font-public-sans);
+
+  /* 4pt-based spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 9rem;
+
+  --shadow-sm: 0 1px 2px oklch(0.19 0.014 155 / 0.06);
+  --shadow-md: 0 4px 16px oklch(0.19 0.014 155 / 0.08);
+  --shadow-lg: 0 12px 40px oklch(0.19 0.014 155 / 0.12);
+
+  /* z-index scale */
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-toast: 60;
+  --z-tooltip: 70;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: var(--color-accent-soft-strong);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: rise-in 0.7s var(--ease-out-quart) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
