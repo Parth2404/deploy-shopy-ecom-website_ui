@@ -21,7 +21,7 @@ export function DashboardMockup({ className }: { className?: string }) {
       role="img"
       aria-label="Mock-up of the vendor dashboard showing recovered abandoned carts for a fictional store"
     >
-      <div className="flex overflow-hidden rounded-2xl border border-border bg-surface shadow-lg">
+      <div className="flex overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-lg)]">
         <div className="flex w-14 flex-col items-center gap-4 bg-rail py-5">
           {RAIL_ITEMS.map(({ icon: Icon, active }, i) => (
             <div

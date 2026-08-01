@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import { SITE_NAME } from "@/lib/constants";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import "./globals.css";
 
 const publicSans = Public_Sans({
@@ -46,7 +47,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

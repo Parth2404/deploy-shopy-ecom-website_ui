@@ -1,6 +1,8 @@
 import { Lock, PlugZap, UserCog } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const POINTS = [
   {
@@ -24,17 +26,19 @@ export function Trust() {
   return (
     <Section id="data" tone="canvas">
       <Container>
-        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-10">
-          <p className="text-xs font-medium tracking-wide text-ink-muted">
-            For the Shopify review team, and every merchant
-          </p>
-          <h2 className="mt-2 text-balance text-[clamp(1.5rem,2vw+1rem,2.125rem)] font-semibold tracking-[-0.02em] text-ink">
-            How we handle your Shopify data
-          </h2>
+        <div className="rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-sm)] sm:p-10">
+          <Reveal>
+            <p className="text-xs font-medium tracking-wide text-ink-muted">
+              For the Shopify review team, and every merchant
+            </p>
+            <h2 className="mt-2 text-balance text-[clamp(1.5rem,2vw+1rem,2.125rem)] font-semibold tracking-[-0.02em] text-ink">
+              How we handle your Shopify data
+            </h2>
+          </Reveal>
 
-          <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          <Stagger className="mt-8 grid gap-8 sm:grid-cols-3">
             {POINTS.map(({ icon: Icon, title, body }) => (
-              <div key={title}>
+              <StaggerItem key={title}>
                 <Icon className="size-5 text-accent" aria-hidden />
                 <h3 className="mt-3 text-[0.9375rem] font-semibold text-ink">
                   {title}
@@ -42,9 +46,9 @@ export function Trust() {
                 <p className="mt-1.5 text-[0.875rem] leading-relaxed text-ink-muted">
                   {body}
                 </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
 
           <p className="mt-8 border-t border-border pt-6 text-[0.8125rem] leading-relaxed text-ink-muted">
             Full details are in our{" "}

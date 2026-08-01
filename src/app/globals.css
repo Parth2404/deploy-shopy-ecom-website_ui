@@ -30,6 +30,12 @@
   --color-rail-ink-muted: oklch(0.62 0.02 275);
   --color-rail-accent: oklch(0.6 0.13 158);
 
+  /* Secondary accent — warm copper, complementary to the pine hue (158).
+     Reserved for the benefits/stats strip only, never competes with the
+     primary CTA color. */
+  --color-accent-2: oklch(0.52 0.14 55);
+  --color-accent-2-soft: oklch(0.94 0.045 55);
+
   /* Semantic */
   --color-success: var(--color-accent);
   --color-success-soft: var(--color-accent-soft);
@@ -56,12 +62,12 @@
   --shadow-lg: 0 12px 40px oklch(0.19 0.014 155 / 0.12);
 
   /* z-index scale */
-  --z-dropdown: 20;
-  --z-sticky: 30;
-  --z-modal-backdrop: 40;
-  --z-modal: 50;
-  --z-toast: 60;
-  --z-tooltip: 70;
+  --z-index-dropdown: 20;
+  --z-index-sticky: 30;
+  --z-index-modal-backdrop: 40;
+  --z-index-modal: 50;
+  --z-index-toast: 60;
+  --z-index-tooltip: 70;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -69,6 +75,7 @@
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -88,19 +95,13 @@ body {
   border-radius: 2px;
 }
 
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.reveal {
-  animation: rise-in 0.7s var(--ease-out-quart) both;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

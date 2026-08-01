@@ -1,6 +1,8 @@
 import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const FAQS = [
   {
@@ -31,28 +33,32 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <Section id="faq" tone="surface" border>
+    <Section id="faq" tone="canvas" border>
       <Container className="max-w-[48rem]">
-        <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
-          Questions merchants ask us
-        </h2>
+        <Reveal>
+          <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+            Questions merchants ask us
+          </h2>
+        </Reveal>
 
-        <div className="mt-8 divide-y divide-border border-t border-border">
+        <Stagger className="mt-8 divide-y divide-border border-t border-border">
           {FAQS.map(({ q, a }) => (
-            <details key={q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[0.9375rem] font-medium text-ink marker:content-none">
-                {q}
-                <ChevronDown
-                  className="size-4 shrink-0 text-ink-subtle transition-transform duration-200 ease-out group-open:rotate-180"
-                  aria-hidden
-                />
-              </summary>
-              <p className="mt-3 max-w-[60ch] text-[0.9375rem] leading-relaxed text-ink-muted">
-                {a}
-              </p>
-            </details>
+            <StaggerItem key={q}>
+              <details className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[0.9375rem] font-medium text-ink marker:content-none">
+                  {q}
+                  <ChevronDown
+                    className="size-4 shrink-0 text-ink-subtle transition-transform duration-200 ease-out group-open:rotate-180"
+                    aria-hidden
+                  />
+                </summary>
+                <p className="mt-3 max-w-[60ch] text-[0.9375rem] leading-relaxed text-ink-muted">
+                  {a}
+                </p>
+              </details>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </Container>
     </Section>
   );

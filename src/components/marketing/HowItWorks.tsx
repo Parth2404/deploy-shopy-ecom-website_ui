@@ -1,5 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const STEPS = [
   {
@@ -20,19 +22,23 @@ export function HowItWorks() {
   return (
     <Section id="how-it-works" tone="surface" border>
       <Container>
-        <div className="max-w-[42ch]">
-          <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
-            From Shopify store to app store, in three steps
-          </h2>
-          <p className="mt-4 text-base text-ink-muted">
-            This is the actual process, start to finish — not a simplified
-            marketing version of it.
-          </p>
+        <div>
+          <Reveal>
+            <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+              From Shopify store to app store, in three steps
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-4 text-base text-ink-muted">
+              This is the actual process, start to finish — not a simplified
+              marketing version of it.
+            </p>
+          </Reveal>
         </div>
 
-        <ol className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-3">
+        <Stagger as="ol" className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-3">
           {STEPS.map((step, i) => (
-            <li key={step.title} className="relative">
+            <StaggerItem as="li" key={step.title} className="relative">
               <span
                 aria-hidden
                 className="block text-[2.75rem] font-semibold leading-none tracking-[-0.03em] text-accent-soft-strong"
@@ -45,9 +51,9 @@ export function HowItWorks() {
               <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-muted">
                 {step.body}
               </p>
-            </li>
+            </StaggerItem>
           ))}
-        </ol>
+        </Stagger>
       </Container>
     </Section>
   );
