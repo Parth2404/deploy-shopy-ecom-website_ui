@@ -1,0 +1,37 @@
+name: Deploy to Prod on vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the first repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch full history to include all commits
+
+      - name: Set up SSH for the second repository
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_REPO_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add the second repository as a remote
+        run: |
+          git remote add second-repo git@github.com:Parth2404/deploy-shopy-ecom-website_ui.git
+          git fetch second-repo
+
+      - name: Push changes to the second repository
+        run: |
+          git push second-repo main --force || git push second-repo HEAD:main
