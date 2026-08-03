@@ -32,7 +32,12 @@ export function Header() {
           >
             Contact us
           </a>
-          <ButtonLink href={VENDOR_SIGNUP_URL} size="md">
+          <ButtonLink
+            href={VENDOR_SIGNUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            size="md"
+          >
             Sign up
           </ButtonLink>
         </div>

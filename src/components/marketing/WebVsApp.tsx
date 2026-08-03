@@ -50,9 +50,9 @@ export function WebVsApp() {
             </Reveal>
 
             <Reveal delay={0.16}>
-              <div className="mt-8 overflow-x-auto rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)]">
-                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-                  <thead>
+              <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)] sm:overflow-x-auto">
+                <table className="block w-full border-collapse text-left text-sm sm:table sm:min-w-[32rem]">
+                  <thead className="hidden sm:table-header-group">
                     <tr className="bg-surface-2">
                       <th scope="col" className="p-4 font-medium text-ink-muted">
                         &nbsp;
@@ -65,16 +65,19 @@ export function WebVsApp() {
                       </th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="block sm:table-row-group">
                     {ROWS.map((row) => (
-                      <tr key={row.label} className="border-t border-border">
+                      <tr
+                        key={row.label}
+                        className="block border-t border-border p-4 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t"
+                      >
                         <th
                           scope="row"
-                          className="p-4 align-top font-medium text-ink"
+                          className="block p-0 pb-2 align-top font-medium text-ink sm:table-cell sm:p-4"
                         >
                           {row.label}
                         </th>
-                        <td className="p-4 align-top text-ink-muted">
+                        <td className="block p-0 py-1.5 align-top text-ink-muted sm:table-cell sm:p-4">
                           <span className="flex items-start gap-2">
                             <X
                               className="mt-0.5 size-4 shrink-0 text-ink-subtle"
@@ -83,7 +86,7 @@ export function WebVsApp() {
                             {row.web}
                           </span>
                         </td>
-                        <td className="p-4 align-top text-ink">
+                        <td className="block p-0 py-1.5 align-top text-ink sm:table-cell sm:p-4">
                           <span className="flex items-start gap-2">
                             <Check
                               className="mt-0.5 size-4 shrink-0 text-accent"

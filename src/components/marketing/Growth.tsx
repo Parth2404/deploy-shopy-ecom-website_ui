@@ -50,7 +50,7 @@ export function Growth() {
           {BENEFITS.map(({ icon: Icon, label, body }) => (
             <StaggerItem
               key={label}
-              className="group relative flex flex-col overflow-hidden rounded-[2.5rem] border border-ink/[0.06] bg-canvas p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:border-ink/[0.12] hover:shadow-[0_24px_50px_-15px_rgba(0,0,0,0.06)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink/[0.06] bg-canvas p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:border-ink/[0.12] hover:shadow-[0_24px_50px_-15px_rgba(0,0,0,0.06)]"
             >
               {/* Animated radial gradient blob */}
               <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-ink/[0.04] to-transparent blur-3xl transition-all duration-700 ease-out group-hover:scale-[1.5] group-hover:from-ink/[0.08]" />

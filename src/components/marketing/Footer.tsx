@@ -12,8 +12,8 @@ export function Footer() {
         <div className="max-w-[32ch]">
           <Logo />
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            We build a branded Android app from your live Shopify store —
-            no dev work required on your side.
+            We build a branded Android and iOS app from your live Shopify
+            store — no dev work required on your side.
           </p>
         </div>
 

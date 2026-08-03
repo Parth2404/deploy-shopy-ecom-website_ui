@@ -28,7 +28,7 @@ Turn your Shopify store into your own branded mobile app — we build it for you
 - Secondary CTA: an on-site contact form (name, store, message) for merchants not ready to sign up yet.
 - The line a visitor remembers after 10 seconds: "Your Shopify store, now in your customers' pocket — we build the app."
 - Belief ladder: (1) more customers would buy if it were easier to shop from their phone → (2) building an app myself is expensive and technical → (3) this service builds it directly from my existing Shopify catalog, no dev work on my side → (4) the process is just: sign up, tell us about the store, the team builds and ships the APK → (5) therefore, sign up now.
-- Proof on hand: none yet (no live testimonials, screenshots, or client logos). Ship with realistic illustrative device mockups of the vendor dashboard and the mobile storefront; swap in real screenshots once available.
+- Proof on hand: real device screenshots from a live build (`public/images/app-*.png`, home/collections/collection-detail/shop-all/cart/search), used throughout the site. No client testimonials or logos yet — the vendor dashboard is still an illustrative mockup (`DashboardMockup.tsx`) pending a real screenshot.
 
 ## Brand Personality
 

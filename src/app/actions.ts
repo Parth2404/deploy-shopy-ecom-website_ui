@@ -1,18 +1,9 @@
 "use server";
 
-import { SendMailClient } from "zeptomail";
-
 export type ContactState = {
   status: "idle" | "success" | "error";
   message: string;
 };
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
 
 export async function submitContact(
   _prevState: ContactState,
@@ -36,14 +27,15 @@ export async function submitContact(
     };
   }
 
-  const { ZEPTO_URL, ZEPTO_TOKEN, APP_EMAIL, APP_EMAIL_NAME, CONTACT_TO_EMAIL } =
-    process.env;
+  const { API_URL } = process.env;
 
-  if (!ZEPTO_URL || !ZEPTO_TOKEN || !APP_EMAIL || !CONTACT_TO_EMAIL) {
-    console.error(
-      "Contact form: ZEPTO_URL/ZEPTO_TOKEN/APP_EMAIL/CONTACT_TO_EMAIL not configured; message not sent.",
-      { name, email, store, message },
-    );
+  if (!API_URL) {
+    console.error("Contact form: API_URL not configured; request not sent.", {
+      name,
+      email,
+      store,
+      message,
+    });
     return {
       status: "error",
       message:
@@ -52,20 +44,14 @@ export async function submitContact(
   }
 
   try {
-    const client = new SendMailClient({ url: ZEPTO_URL, token: ZEPTO_TOKEN });
-    await client.sendMail({
-      from: { address: APP_EMAIL, name: APP_EMAIL_NAME ?? "Mobile Connect" },
-      to: [{ email_address: { address: CONTACT_TO_EMAIL, name: "Mobile Connect team" } }],
-      reply_to: [{ address: email, name }],
-      subject: `New contact form message from ${name}`,
-      htmlbody: `
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Store:</strong> ${escapeHtml(store || "—")}</p>
-        <p><strong>Message:</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
-      `,
+    const res = await fetch(`${API_URL}/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, store: store || undefined, message }),
     });
+    if (!res.ok) {
+      throw new Error(`Contact API responded with ${res.status}`);
+    }
     return {
       status: "success",
       message: "Thanks — we've got your message and will reply by email soon.",
