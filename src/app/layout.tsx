@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description:
-    "Mobile Connect turns your existing Shopify store into your own branded Android app, built from your live product catalog. No dev work required.",
+    "Mobile Connect turns your existing Shopify store into your own branded Android and iOS app, built from your live product catalog. No dev work required.",
   openGraph: {
     title: `${SITE_NAME} — Turn your Shopify store into a mobile app`,
     description:
-      "We build a branded Android app from your live Shopify catalog — products, cart, and customer accounts, synced automatically.",
+      "We build a branded Android and iOS app from your live Shopify catalog — products, cart, and customer accounts, synced automatically.",
     siteName: SITE_NAME,
     type: "website",
   },

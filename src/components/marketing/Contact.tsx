@@ -19,7 +19,13 @@ export function Contact() {
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-muted">
             <span>Ready to start now?</span>
-            <ButtonLink href={VENDOR_SIGNUP_URL} variant="secondary" size="md">
+            <ButtonLink
+              href={VENDOR_SIGNUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              size="md"
+            >
               Sign up instead
             </ButtonLink>
           </div>

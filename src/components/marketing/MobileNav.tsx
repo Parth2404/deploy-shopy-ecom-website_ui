@@ -57,6 +57,8 @@ export function MobileNav() {
         <div className="mt-8 flex flex-col gap-3">
           <ButtonLink
             href={VENDOR_SIGNUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="primary"
             size="lg"
             onClick={close}

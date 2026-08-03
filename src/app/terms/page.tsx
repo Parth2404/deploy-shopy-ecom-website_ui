@@ -20,8 +20,8 @@ export default function TermsPage() {
       <LegalSection heading="1. The service">
         <p>
           Mobile Connect connects to your existing Shopify store and builds
-          a custom Android app backed by your live product catalog, cart,
-          and customer accounts. We also provide a vendor dashboard for
+          a custom Android and iOS app backed by your live product catalog,
+          cart, and customer accounts. We also provide a vendor dashboard for
           managing your store&rsquo;s app, staff, and notifications.
         </p>
       </LegalSection>

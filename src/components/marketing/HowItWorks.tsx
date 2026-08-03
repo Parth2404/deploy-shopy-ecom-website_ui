@@ -10,11 +10,11 @@ const STEPS = [
   },
   {
     title: "We build your app",
-    body: "Our team builds a custom Android app wired directly to your live Shopify catalog: products, cart, and customer accounts, synced through Shopify's own APIs.",
+    body: "Our team builds a custom Android and iOS app wired directly to your live Shopify catalog: products, cart, and customer accounts, synced through Shopify's own APIs.",
   },
   {
     title: "Launch & manage from your dashboard",
-    body: "We hand you the finished APK to share with your customers. Manage notifications, cart recovery, and your team from your vendor dashboard.",
+    body: "We hand you the finished Android APK and publish your iOS app to the App Store. Manage notifications, cart recovery, and your team from your vendor dashboard.",
   },
 ];
 

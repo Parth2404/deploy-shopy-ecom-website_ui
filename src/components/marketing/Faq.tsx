@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: "What platform is the app built for?",
-    a: "Android today, delivered as an APK you can distribute directly to your customers. Let us know during signup if you need iOS.",
+    a: "Both Android and iOS. Android ships as an APK you can distribute directly to your customers, and iOS through the App Store.",
   },
   {
     q: "What Shopify data can you access?",

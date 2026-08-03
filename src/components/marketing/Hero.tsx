@@ -11,12 +11,12 @@ import { DashboardMockup } from "./DashboardMockup";
 const TRUST_POINTS = [
   { icon: RefreshCw, label: "Synced from your live Shopify catalog" },
   { icon: ShieldCheck, label: "You stay in control of your store" },
-  { icon: Smartphone, label: "Android app, built for you" },
+  { icon: Smartphone, label: "Android and iOS app, built for you" },
 ];
 
 export function Hero() {
   return (
-    <Section>
+    <Section className="lg:max-h-[calc(100vh-74px)]">
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
         <div>
           <Reveal>
@@ -27,14 +27,19 @@ export function Hero() {
           <Reveal delay={0.08}>
             <p className="mt-6 max-w-[46ch] text-pretty text-lg text-ink-muted">
               Mobile Connect turns your existing store into your own branded
-              Android app, built from your live Shopify catalog. No dev work
-              required on your side.
+              Android and iOS app, built from your live Shopify catalog. No
+              dev work required on your side.
             </p>
           </Reveal>
 
           <Reveal delay={0.16}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={VENDOR_SIGNUP_URL} size="lg">
+              <ButtonLink
+                href={VENDOR_SIGNUP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+              >
                 Sign up
               </ButtonLink>
               <ButtonLink href="#contact" variant="secondary" size="lg">
