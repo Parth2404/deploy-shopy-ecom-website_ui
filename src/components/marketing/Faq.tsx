@@ -7,7 +7,7 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 const FAQS = [
   {
     q: "Is this free?",
-    a: "Pricing depends on your store and what you need built. Sign up or use the contact form below and we'll walk you through it before any work starts.",
+    a: "Yes, it's free. Message our support team on WhatsApp and we'll walk you through it.",
   },
   {
     q: "Do I need any development skills?",
