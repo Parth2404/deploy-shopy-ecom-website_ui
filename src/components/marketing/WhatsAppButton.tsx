@@ -3,7 +3,7 @@ const WHATSAPP_NUMBER = "919727277757";
 export function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20there%2C%20i%20am%20interested%20in%20your%20product%20Mobile%20Connect%20and%20would%20like%20to%20know%20more%20about%20it.`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
