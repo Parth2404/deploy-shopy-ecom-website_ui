@@ -1,5 +1,7 @@
 "use server";
 
+import { trackViaFbPixel } from "@/lib/utils";
+
 export type ContactState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -26,6 +28,12 @@ export async function submitContact(
       message: "That email address doesn't look right. Try name@store.com.",
     };
   }
+
+  trackViaFbPixel("lead_contact", `lead_contact_${Date.now()}`, {
+    name,
+    email,
+    store,
+  });
 
   const { API_URL } = process.env;
 

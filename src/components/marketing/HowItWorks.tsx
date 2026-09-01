@@ -5,8 +5,8 @@ import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const STEPS = [
   {
-    title: "Sign up & connect your store",
-    body: "Create an account and tell us your store name and your .myshopify.com domain. Takes about two minutes — no technical setup on your end.",
+    title: "Install & connect your store",
+    body: "Install the app from your Shopify admin — it connects to your store automatically. Takes about two minutes — no technical setup on your end.",
   },
   {
     title: "We build your app",

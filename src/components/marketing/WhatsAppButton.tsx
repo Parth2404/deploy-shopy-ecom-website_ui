@@ -1,4 +1,7 @@
-const WHATSAPP_NUMBER = "919727277757";
+"use client";
+
+import { trackViaFbPixel } from "@/lib/utils";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export function WhatsAppButton() {
   return (
@@ -8,6 +11,9 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       className="fixed bottom-6 right-6 z-tooltip flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 ease-out hover:scale-105"
+      onClick={() =>
+        trackViaFbPixel("lead_whatsapp", `lead_whatsapp_${Date.now()}`, {})
+      }
     >
       <svg
         viewBox="0 0 24 24"
