@@ -11,11 +11,11 @@ const FAQS = [
   },
   {
     q: "Do I need any development skills?",
-    a: "No. You sign up with your store details and our team handles the build.",
+    a: "No. You install the app from your Shopify admin and our team handles the build.",
   },
   {
     q: "How long does it take to get my app?",
-    a: "It depends on your catalog and requirements. We'll give you a timeline after signup, before we start building.",
+    a: "It depends on your catalog and requirements. We'll give you a timeline after install, before we start building.",
   },
   {
     q: "What platform is the app built for?",

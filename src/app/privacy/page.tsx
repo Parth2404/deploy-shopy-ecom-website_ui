@@ -13,13 +13,13 @@ export default function PrivacyPage() {
     <LegalLayout title="Privacy Policy" updated="August 1, 2026">
       <p>
         This policy explains what {SITE_NAME} ([Company legal name]) collects
-        when you sign up as a vendor, connect your Shopify store, or use the
+        when you install the app as a vendor, connect your Shopify store, or use the
         app we build for your customers — and what we do with it.
       </p>
 
       <LegalSection heading="1. Information we collect">
         <p>
-          <strong>Account information.</strong> When you sign up, we collect
+          <strong>Account information.</strong> When you install the app, we collect
           your store name, email address, password (stored as a salted
           hash, never in plain text), and your Shopify store domain
           (<code>*.myshopify.com</code>).

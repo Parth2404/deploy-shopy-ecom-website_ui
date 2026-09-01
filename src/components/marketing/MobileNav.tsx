@@ -2,8 +2,8 @@
 
 import { useRef } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, VENDOR_SIGNUP_URL } from "@/lib/constants";
-import { ButtonLink } from "@/components/ui/Button";
+import { NAV_LINKS } from "@/lib/constants";
+import { InstallButton } from "./InstallButton";
 
 export function MobileNav() {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -55,16 +55,9 @@ export function MobileNav() {
         </nav>
 
         <div className="mt-8 flex flex-col gap-3">
-          <ButtonLink
-            href={VENDOR_SIGNUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="primary"
-            size="lg"
-            onClick={close}
-          >
-            Sign up
-          </ButtonLink>
+          <InstallButton variant="primary" size="lg" onClick={close}>
+            Install app
+          </InstallButton>
           <a
             href="#contact"
             onClick={close}
