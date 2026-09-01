@@ -1,13 +1,19 @@
-const WHATSAPP_NUMBER = "919727277757";
+"use client";
+
+import { trackViaFbPixel } from "@/lib/utils";
+import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}`}
+      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20there%2C%20i%20am%20interested%20in%20your%20product%20Mobile%20Connect%20and%20would%20like%20to%20know%20more%20about%20it.`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
       className="fixed bottom-6 right-6 z-tooltip flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 ease-out hover:scale-105"
+      onClick={() =>
+        trackViaFbPixel("lead_whatsapp", `lead_whatsapp_${Date.now()}`, {})
+      }
     >
       <svg
         viewBox="0 0 24 24"

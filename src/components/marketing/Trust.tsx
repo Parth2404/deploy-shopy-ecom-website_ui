@@ -18,7 +18,7 @@ const POINTS = [
   {
     icon: UserCog,
     title: "You stay in control",
-    body: "Access is granted when you sign up and connect your store. Disconnect at any time and we stop reading your store's data.",
+    body: "Access is granted when you install the app and connect your store. Disconnect at any time and we stop reading your store's data.",
   },
 ];
 

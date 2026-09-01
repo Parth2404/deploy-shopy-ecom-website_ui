@@ -1,10 +1,10 @@
 import { ShieldCheck, Smartphone, RefreshCw } from "lucide-react";
-import { VENDOR_SIGNUP_URL } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { SCREENSHOTS } from "@/lib/screenshots";
+import { InstallButton } from "./InstallButton";
 import { PhoneMockup } from "./PhoneMockup";
 import { DashboardMockup } from "./DashboardMockup";
 
@@ -34,14 +34,7 @@ export function Hero() {
 
           <Reveal delay={0.16}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink
-                href={VENDOR_SIGNUP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="lg"
-              >
-                Sign up
-              </ButtonLink>
+              <InstallButton size="lg">Install app</InstallButton>
               <ButtonLink href="#contact" variant="secondary" size="lg">
                 Get in touch first
               </ButtonLink>

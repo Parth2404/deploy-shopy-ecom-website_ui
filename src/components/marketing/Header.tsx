@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { NAV_LINKS, SITE_NAME, VENDOR_SIGNUP_URL } from "@/lib/constants";
-import { ButtonLink } from "@/components/ui/Button";
+import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
+import { InstallButton } from "./InstallButton";
 import { Logo } from "./Logo";
 import { MobileNav } from "./MobileNav";
 
@@ -32,14 +32,7 @@ export function Header() {
           >
             Contact us
           </a>
-          <ButtonLink
-            href={VENDOR_SIGNUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            size="md"
-          >
-            Sign up
-          </ButtonLink>
+          <InstallButton size="md">Install app</InstallButton>
         </div>
 
         <MobileNav />
