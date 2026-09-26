@@ -34,7 +34,7 @@ const FAQS = [
 export function Faq() {
   return (
     <Section id="faq" tone="canvas" border>
-      <Container className="max-w-[48rem]">
+      <Container>
         <Reveal>
           <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
             Questions merchants ask us
@@ -52,7 +52,7 @@ export function Faq() {
                     aria-hidden
                   />
                 </summary>
-                <p className="mt-3 max-w-[60ch] text-[0.9375rem] leading-relaxed text-ink-muted">
+                <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-muted">
                   {a}
                 </p>
               </details>

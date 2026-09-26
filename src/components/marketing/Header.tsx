@@ -13,26 +13,26 @@ export function Header() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-surface-2 hover:text-ink"
+              className="rounded-full px-3.5 py-2 text-sm whitespace-nowrap font-medium text-ink-muted transition-colors hover:bg-surface-2 hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="#contact"
-            className="text-sm font-medium text-ink-muted hover:text-ink"
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/#contact"
+            className="text-sm font-medium whitespace-nowrap text-ink-muted hover:text-ink"
           >
             Contact us
-          </a>
-          <InstallButton size="md">Install app</InstallButton>
+          </Link>
+          <InstallButton size="md" className="whitespace-nowrap">Install app</InstallButton>
         </div>
 
         <MobileNav />
