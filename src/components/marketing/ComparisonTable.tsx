@@ -24,7 +24,7 @@ function Mark({ yes }: { yes: boolean }) {
 
 export function ComparisonTable({ rivals = RIVALS }: { rivals?: Rival[] }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)]">
+    <div className="relative overflow-x-auto rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)]">
       <table
         className={clsx(
           "w-full border-collapse text-sm",
@@ -38,13 +38,13 @@ export function ComparisonTable({ rivals = RIVALS }: { rivals?: Rival[] }) {
           <tr className="bg-surface-2">
             <th
               scope="col"
-              className="sticky left-0 z-10 bg-surface-2 p-4 text-left font-medium text-ink-muted"
+              className="sticky left-0 z-10 bg-surface-2 p-3 text-left md:p-4 font-medium text-ink-muted"
             >
               Feature
             </th>
             <th
               scope="col"
-              className="bg-accent-soft p-4 font-semibold text-accent"
+              className="bg-accent-soft p-3 font-semibold md:p-4 text-accent"
             >
               Mobile Connect
             </th>
@@ -52,7 +52,7 @@ export function ComparisonTable({ rivals = RIVALS }: { rivals?: Rival[] }) {
               <th
                 key={r.slug}
                 scope="col"
-                className="p-4 font-semibold text-ink whitespace-nowrap"
+                className="p-3 font-semibold text-ink whitespace-nowrap md:p-4"
               >
                 {r.name}
               </th>
@@ -64,18 +64,18 @@ export function ComparisonTable({ rivals = RIVALS }: { rivals?: Rival[] }) {
             <tr key={f.id} className="border-t border-border">
               <th
                 scope="row"
-                className="sticky left-0 z-10 bg-surface p-4 text-left font-medium text-ink"
+                className="sticky left-0 z-10 bg-surface p-3 text-left md:p-4 font-medium text-ink"
               >
-                <span className="flex items-center gap-2 whitespace-nowrap">
+                <span className="flex items-center gap-2 md:whitespace-nowrap">
                   {f.label}
                   <InfoTip label={f.label}>{f.tip}</InfoTip>
                 </span>
               </th>
-              <td className="bg-accent-soft/60 p-4">
+              <td className="bg-accent-soft/60 p-3 md:p-4">
                 <Mark yes />
               </td>
               {rivals.map((r) => (
-                <td key={r.slug} className="p-4">
+                <td key={r.slug} className="p-3 md:p-4">
                   <Mark yes={r.has.includes(f.id)} />
                 </td>
               ))}

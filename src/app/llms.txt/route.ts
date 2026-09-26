@@ -1,8 +1,27 @@
+import {
+  FEATURES,
+  RIVALS,
+  RIVALS_WITH_PAGES,
+  pageSlug,
+} from "@/lib/comparison";
 import { SITE_NAME } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const dynamic = "force-static";
+
+const comparisonPages = RIVALS_WITH_PAGES.map(
+  (r) =>
+    `- [${SITE_NAME} vs ${r.name}](${siteUrl}/comparison/${pageSlug(r)}): Side-by-side comparison, how ${r.name} works, published pricing, and who each suits.`,
+).join("\n");
+
+const comparisonFeatures = FEATURES.map((f) => {
+  const listedBy = [
+    SITE_NAME,
+    ...RIVALS.filter((r) => r.has.includes(f.id)).map((r) => r.name),
+  ].join(", ");
+  return `- **${f.label}**: ${f.tip} Listed by: ${listedBy}.`;
+}).join("\n");
 
 export function GET() {
   const body = `# ${SITE_NAME}
@@ -12,6 +31,8 @@ export function GET() {
 ## Pages
 
 - [Home](${siteUrl}/): What the service does, how it works, benefits, FAQ, and a contact form.
+- [Compare](${siteUrl}/comparison): Feature-by-feature comparison with ${RIVALS.map((r) => r.name).join(", ")}.
+${comparisonPages}
 - [Privacy Policy](${siteUrl}/privacy): What data is collected and how it is used.
 - [Terms of Service](${siteUrl}/terms): Terms for using the service.
 
@@ -81,6 +102,12 @@ Billed through Shopify's billing system as a one-time purchase, not a recurring 
 ## Why an app instead of a mobile website
 
 Push notifications are an owned channel with no per-message cost, and reach the lock screen. A home-screen icon keeps the brand visible. Checkout is faster for signed-in customers with saved addresses. Abandoned carts can be recovered by push within minutes. Layout changes are made from the dashboard without a developer. Industry benchmarks suggest higher repeat-shopper conversion, cart recovery and lifetime value in apps; these are not guarantees for any one store.
+
+## How it compares to other Shopify app services
+
+Based on what each company says on its own website (checked September 2026). "Listed by" means the company lists the feature there; a company missing from the list may still offer it. Features every listed company offers (audience-targeted push, automated push, app analytics, custom design and branding) are left out.
+
+${comparisonFeatures}
 
 ## Contact
 

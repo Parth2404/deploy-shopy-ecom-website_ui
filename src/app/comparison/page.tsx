@@ -14,6 +14,7 @@ import { Header } from "@/components/marketing/Header";
 import { Footer } from "@/components/marketing/Footer";
 import { InstallButton } from "@/components/marketing/InstallButton";
 import { ComparisonTable } from "@/components/marketing/ComparisonTable";
+import { ComparisonSwitcher } from "@/components/marketing/ComparisonSwitcher";
 import { Contact } from "@/components/marketing/Contact";
 import { PhoneMockup } from "@/components/marketing/PhoneMockup";
 import { ButtonLink } from "@/components/ui/Button";
@@ -47,7 +48,15 @@ const WHY = [
     icon: Plug,
     title: "Works with tools you already use",
     body: "Connect the review, checkout and analytics tools your store already runs on.",
-    chips: ["Judge.me", "Loox", "Shiprocket", "GoKwik", "Firebase", "Meta Pixel", "Clarity"],
+    chips: [
+      "Judge.me",
+      "Loox",
+      "Shiprocket",
+      "GoKwik",
+      "Firebase",
+      "Meta Pixel",
+      "Clarity",
+    ],
   },
   {
     icon: ShieldCheck,
@@ -58,10 +67,26 @@ const WHY = [
 ];
 
 const GLANCE = [
-  { icon: Smartphone, term: "What you get", detail: "Your own branded Android and iOS app" },
-  { icon: Hammer, term: "Who builds it", detail: "Our team. No developer needed on your side" },
-  { icon: Database, term: "Where the data comes from", detail: "Your live Shopify products, cart and customer accounts" },
-  { icon: Clock, term: "How long builds take", detail: "First build 10–15 minutes, then about 3–4" },
+  {
+    icon: Smartphone,
+    term: "What you get",
+    detail: "Your own branded Android and iOS app",
+  },
+  {
+    icon: Hammer,
+    term: "Who builds it",
+    detail: "Our team. No developer needed on your side",
+  },
+  {
+    icon: Database,
+    term: "Where the data comes from",
+    detail: "Your live Shopify products, cart and customer accounts",
+  },
+  {
+    icon: Clock,
+    term: "How long builds take",
+    detail: "First build 10–15 minutes, then about 3–4",
+  },
 ];
 
 const h2 =
@@ -82,17 +107,20 @@ export default function ComparisonPage() {
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-[52ch] text-pretty text-lg text-ink-muted">
-                  Mobile Connect turns your Shopify store into your own
-                  branded Android and iOS app, built by our team from your live
-                  catalog. Other companies offer something similar. Here&rsquo;s
-                  how we compare, using only what each one says on its own
-                  website.
+                  Mobile Connect turns your Shopify store into your own branded
+                  Android and iOS app, built by our team from your live catalog.
+                  Other companies offer something similar. Here&rsquo;s how we
+                  compare, using only what each one says on its own website.
                 </p>
               </Reveal>
               <Reveal delay={0.16}>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <InstallButton size="lg">Install app</InstallButton>
-                  <ButtonLink href="#compare-table" variant="secondary" size="lg">
+                  <ButtonLink
+                    href="#compare-table"
+                    variant="secondary"
+                    size="lg"
+                  >
                     See the comparison
                   </ButtonLink>
                 </div>
@@ -121,12 +149,17 @@ export default function ComparisonPage() {
                 </h2>
                 <dl className="mt-5 divide-y divide-border">
                   {GLANCE.map(({ icon: Icon, term, detail }) => (
-                    <div key={term} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+                    <div
+                      key={term}
+                      className="flex gap-4 py-4 first:pt-0 last:pb-0"
+                    >
                       <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft">
                         <Icon className="size-5 text-accent" aria-hidden />
                       </span>
                       <div>
-                        <dt className="text-sm font-medium text-ink-muted">{term}</dt>
+                        <dt className="text-sm font-medium text-ink-muted">
+                          {term}
+                        </dt>
                         <dd className="mt-0.5 text-[0.9375rem] font-medium text-ink">
                           {detail}
                         </dd>
@@ -144,14 +177,17 @@ export default function ComparisonPage() {
             <Reveal>
               <h2 className={h2}>Feature by feature</h2>
               <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-ink-muted">
-                Nine things that matter when a Shopify app gets built and run.
-                A tick means the company lists it on its website. A cross means
-                we couldn&rsquo;t find it listed there. Tap the info icon on any
+                Nine things that matter when a Shopify app gets built and run. A
+                tick means the company lists it on its website. A cross means we
+                couldn&rsquo;t find it listed there. Tap the info icon on any
                 row for a plain-language explanation.
               </p>
             </Reveal>
             <Reveal delay={0.08} className="mt-8">
-              <ComparisonTable />
+              <div className="hidden lg:block">
+                <ComparisonTable />
+              </div>
+              <ComparisonSwitcher />
             </Reveal>
           </Container>
         </Section>
@@ -162,7 +198,10 @@ export default function ComparisonPage() {
               <Reveal>
                 <h2 className={h2}>Why merchants choose Mobile Connect</h2>
               </Reveal>
-              <Reveal delay={0.1} className="mt-10 hidden justify-self-start lg:block">
+              <Reveal
+                delay={0.1}
+                className="mt-10 hidden justify-self-start lg:block"
+              >
                 <PhoneMockup
                   src={SCREENSHOTS.home.src}
                   alt={SCREENSHOTS.home.alt}
@@ -183,7 +222,9 @@ export default function ComparisonPage() {
                       <Icon className="size-6 text-accent" aria-hidden />
                     </span>
                     <div>
-                      <h3 className="text-xl font-semibold text-ink">{title}</h3>
+                      <h3 className="text-xl font-semibold text-ink">
+                        {title}
+                      </h3>
                       <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-muted">
                         {body}
                       </p>
