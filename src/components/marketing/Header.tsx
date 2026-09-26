@@ -15,23 +15,23 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-surface-2 hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="text-sm font-medium text-ink-muted hover:text-ink"
           >
             Contact us
-          </a>
+          </Link>
           <InstallButton size="md">Install app</InstallButton>
         </div>
 

@@ -37,6 +37,8 @@
   --color-accent-2-soft: oklch(0.94 0.045 55);
 
   /* Semantic */
+  /* Comparison ticks: brighter than the brand pine so a tick reads as "yes", not black. */
+  --color-yes: oklch(0.62 0.17 152);
   --color-success: var(--color-accent);
   --color-success-soft: var(--color-accent-soft);
   --color-danger: oklch(0.52 0.19 25);

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
@@ -43,14 +44,14 @@ export function MobileNav() {
 
         <nav className="mt-8 flex flex-col gap-1">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={close}
               className="rounded-lg px-3 py-3 text-lg font-medium text-ink hover:bg-surface-2"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -58,13 +59,13 @@ export function MobileNav() {
           <InstallButton variant="primary" size="lg" onClick={close}>
             Install app
           </InstallButton>
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             onClick={close}
             className="text-center text-sm font-medium text-ink-muted hover:text-ink"
           >
             Or get in touch first
-          </a>
+          </Link>
         </div>
       </div>
     </div>
