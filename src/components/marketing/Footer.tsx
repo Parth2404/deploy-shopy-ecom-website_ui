@@ -19,17 +19,17 @@ export function Footer() {
 
         <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-ink-muted hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a href="#contact" className="text-sm text-ink-muted hover:text-ink">
+          <Link href="/#contact" className="text-sm text-ink-muted hover:text-ink">
             Contact
-          </a>
+          </Link>
           <Link href="/privacy" className="text-sm text-ink-muted hover:text-ink">
             Privacy
           </Link>
