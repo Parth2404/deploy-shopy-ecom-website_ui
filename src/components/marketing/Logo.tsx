@@ -12,9 +12,7 @@ export function Logo({ className }: { className?: string }) {
         className="size-11 rounded-lg object-cover"
         priority
       />
-      <span className="text-[0.9375rem] font-semibold tracking-tight text-ink">
-        {SITE_NAME}
-      </span>
+      <span className="text-ink text-[0.9375rem] font-semibold tracking-tight">{SITE_NAME}</span>
     </span>
   );
 }

@@ -13,19 +13,16 @@ const fieldClass =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-ring";
 
 export function ContactForm() {
-  const [state, formAction, isPending] = useActionState(
-    submitContact,
-    initialState,
-  );
+  const [state, formAction, isPending] = useActionState(submitContact, initialState);
 
   if (state.status === "success") {
     return (
       <div
         role="status"
-        className="flex items-start gap-3 rounded-xl border border-border bg-accent-soft p-6"
+        className="border-border bg-accent-soft flex items-start gap-3 rounded-xl border p-6"
       >
-        <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
-        <p className="text-[0.9375rem] text-ink">{state.message}</p>
+        <CheckCircle2 className="text-accent mt-0.5 size-5 shrink-0" aria-hidden />
+        <p className="text-ink text-[0.9375rem]">{state.message}</p>
       </div>
     );
   }
@@ -34,7 +31,7 @@ export function ContactForm() {
     <form action={formAction} className="space-y-5" noValidate={false}>
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-ink">
+          <label htmlFor="name" className="text-ink text-sm font-medium">
             Your name
           </label>
           <input
@@ -48,7 +45,7 @@ export function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium text-ink">
+          <label htmlFor="email" className="text-ink text-sm font-medium">
             Email
           </label>
           <input
@@ -64,9 +61,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="store" className="text-sm font-medium text-ink">
-          Store name or domain{" "}
-          <span className="font-normal text-ink-subtle">(optional)</span>
+        <label htmlFor="store" className="text-ink text-sm font-medium">
+          Store name or domain <span className="text-ink-subtle font-normal">(optional)</span>
         </label>
         <input
           id="store"
@@ -79,7 +75,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-ink">
+        <label htmlFor="message" className="text-ink text-sm font-medium">
           Message
         </label>
         <textarea
@@ -95,7 +91,7 @@ export function ContactForm() {
       {state.status === "error" && (
         <p
           role="alert"
-          className="flex items-start gap-2 rounded-lg border border-danger/30 bg-danger-soft px-4 py-3 text-sm text-danger"
+          className="border-danger/30 bg-danger-soft text-danger flex items-start gap-2 rounded-lg border px-4 py-3 text-sm"
         >
           <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden />
           {state.message}

@@ -37,8 +37,7 @@ export function Button({
   children,
   disabled,
   ...props
-}: CommonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & { isLoading?: boolean }) {
+}: CommonProps & ButtonHTMLAttributes<HTMLButtonElement> & { isLoading?: boolean }) {
   return (
     <button
       className={clsx(base, variants[variant], sizes[size], className)}
@@ -60,10 +59,7 @@ export function ButtonLink({
   ...props
 }: CommonProps & ComponentProps<typeof Link>) {
   return (
-    <Link
-      className={clsx(base, variants[variant], sizes[size], className)}
-      {...props}
-    >
+    <Link className={clsx(base, variants[variant], sizes[size], className)} {...props}>
       {children}
     </Link>
   );

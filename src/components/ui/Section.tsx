@@ -26,7 +26,7 @@ export function Section({
       className={clsx(
         "scroll-mt-20 py-[clamp(3.5rem,7vw,6.5rem)]",
         tones[tone],
-        border && "border-t border-border",
+        border && "border-border border-t",
         className,
       )}
     >

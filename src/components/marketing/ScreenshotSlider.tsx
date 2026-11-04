@@ -19,10 +19,7 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
   const next = () => setCurrentIndex((prev) => prev + 1);
   const prev = () => setCurrentIndex((prev) => prev - 1);
 
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (info.offset.x < -50) {
       next();
     } else if (info.offset.x > 50) {
@@ -37,12 +34,8 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
         <div className="invisible flex w-[78vw] max-w-[300px] flex-col items-center text-center">
           <PhoneMockup src={screens[0].screenshot.src} alt="" />
           <div className="mt-6 w-[78vw] max-w-[300px]">
-            <h3 className="text-base font-semibold text-ink">
-              {screens[0].title}
-            </h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-              {screens[0].body}
-            </p>
+            <h3 className="text-ink text-base font-semibold">{screens[0].title}</h3>
+            <p className="text-ink-muted mt-1.5 text-sm leading-relaxed">{screens[0].body}</p>
           </div>
         </div>
 
@@ -81,21 +74,14 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
                 damping: 30,
               }}
             >
-              <PhoneMockup
-                src={screen.screenshot.src}
-                alt={screen.screenshot.alt}
-              />
+              <PhoneMockup src={screen.screenshot.src} alt={screen.screenshot.alt} />
               <motion.div
                 className="mt-6"
                 animate={{ opacity: isActive ? 1 : 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <h3 className="text-base font-semibold text-ink">
-                  {screen.title}
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">
-                  {screen.body}
-                </p>
+                <h3 className="text-ink text-base font-semibold">{screen.title}</h3>
+                <p className="text-ink-muted mt-1.5 text-sm leading-relaxed">{screen.body}</p>
               </motion.div>
             </motion.div>
           );
@@ -105,7 +91,7 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
       <div className="mt-8 flex items-center gap-6">
         <button
           onClick={prev}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors hover:bg-ink/5 focus:outline-none"
+          className="border-ink/10 text-ink hover:bg-ink/5 flex h-10 w-10 items-center justify-center rounded-full border transition-colors focus:outline-none"
           aria-label="Previous screenshot"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -126,9 +112,7 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
                   setCurrentIndex(currentIndex + adjustment);
                 }}
                 className={`h-2 rounded-full transition-all ${
-                  isActive
-                    ? "w-6 bg-ink"
-                    : "w-2 bg-ink/20 hover:bg-ink/40"
+                  isActive ? "bg-ink w-6" : "bg-ink/20 hover:bg-ink/40 w-2"
                 }`}
               />
             );
@@ -136,7 +120,7 @@ export function ScreenshotSlider({ screens }: { screens: Screen[] }) {
         </div>
         <button
           onClick={next}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors hover:bg-ink/5 focus:outline-none"
+          className="border-ink/10 text-ink hover:bg-ink/5 flex h-10 w-10 items-center justify-center rounded-full border transition-colors focus:outline-none"
           aria-label="Next screenshot"
         >
           <ChevronRight className="h-5 w-5" />

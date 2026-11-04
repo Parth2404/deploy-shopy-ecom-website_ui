@@ -1,9 +1,4 @@
-import {
-  FEATURES,
-  RIVALS,
-  RIVALS_WITH_PAGES,
-  pageSlug,
-} from "@/lib/comparison";
+import { FEATURES, RIVALS, RIVALS_WITH_PAGES, pageSlug } from "@/lib/comparison";
 import { SITE_NAME } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";

@@ -26,12 +26,12 @@ export function Trust() {
   return (
     <Section id="data" tone="canvas">
       <Container>
-        <div className="rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-sm)] sm:p-10">
+        <div className="border-border bg-surface rounded-2xl border p-8 shadow-[var(--shadow-sm)] sm:p-10">
           <Reveal>
-            <p className="text-xs font-medium tracking-wide text-ink-muted">
+            <p className="text-ink-muted text-xs font-medium tracking-wide">
               For the Shopify review team, and every merchant
             </p>
-            <h2 className="mt-2 text-balance text-[clamp(1.5rem,2vw+1rem,2.125rem)] font-semibold tracking-[-0.02em] text-ink">
+            <h2 className="text-ink mt-2 text-[clamp(1.5rem,2vw+1rem,2.125rem)] font-semibold tracking-[-0.02em] text-balance">
               How we handle your Shopify data
             </h2>
           </Reveal>
@@ -39,27 +39,23 @@ export function Trust() {
           <Stagger className="mt-8 grid gap-8 sm:grid-cols-3">
             {POINTS.map(({ icon: Icon, title, body }) => (
               <StaggerItem key={title}>
-                <Icon className="size-5 text-accent" aria-hidden />
-                <h3 className="mt-3 text-[0.9375rem] font-semibold text-ink">
-                  {title}
-                </h3>
-                <p className="mt-1.5 text-[0.875rem] leading-relaxed text-ink-muted">
-                  {body}
-                </p>
+                <Icon className="text-accent size-5" aria-hidden />
+                <h3 className="text-ink mt-3 text-[0.9375rem] font-semibold">{title}</h3>
+                <p className="text-ink-muted mt-1.5 text-[0.875rem] leading-relaxed">{body}</p>
               </StaggerItem>
             ))}
           </Stagger>
 
-          <p className="mt-8 border-t border-border pt-6 text-[0.8125rem] leading-relaxed text-ink-muted">
+          <p className="border-border text-ink-muted mt-8 border-t pt-6 text-[0.8125rem] leading-relaxed">
             Full details are in our{" "}
-            <a href="/privacy" className="font-medium text-accent hover:underline">
+            <a href="/privacy" className="text-accent font-medium hover:underline">
               Privacy Policy
             </a>
             . Questions about data handling can go straight to the{" "}
-            <a href="#contact" className="font-medium text-accent hover:underline">
+            <a href="#contact" className="text-accent font-medium hover:underline">
               contact form
-            </a>
-            {" "}below.
+            </a>{" "}
+            below.
           </p>
         </div>
       </Container>

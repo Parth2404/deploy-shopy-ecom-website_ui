@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+stats.html
+.next
+out
+.agents
+.claude
+
+.env
+.env.*
+
+*.log

@@ -33,7 +33,7 @@ export function InfoTip({ label, children }: { label: string; children: string }
         onMouseEnter={show}
         onMouseLeave={hide}
         aria-label={`What does this mean? ${label}`}
-        className="inline-flex size-6 shrink-0 items-center justify-center rounded-full text-ink-subtle hover:bg-surface-2 hover:text-ink"
+        className="text-ink-subtle hover:bg-surface-2 hover:text-ink inline-flex size-6 shrink-0 items-center justify-center rounded-full"
       >
         <Info className="size-4" aria-hidden />
       </button>
@@ -42,7 +42,7 @@ export function InfoTip({ label, children }: { label: string; children: string }
         ref={tip}
         popover="auto"
         role="tooltip"
-        className="fixed m-0 w-64 overflow-visible whitespace-normal rounded-lg border-0 bg-ink p-3 text-left text-xs font-normal leading-relaxed text-canvas shadow-[var(--shadow-lg)]"
+        className="bg-ink text-canvas fixed m-0 w-64 overflow-visible rounded-lg border-0 p-3 text-left text-xs leading-relaxed font-normal whitespace-normal shadow-[var(--shadow-lg)]"
         style={{ inset: "auto" }}
       >
         {children}

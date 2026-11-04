@@ -20,15 +20,14 @@ export function Hero() {
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
         <div>
           <Reveal>
-            <h1 className="text-balance text-[clamp(2.25rem,4.4vw+1rem,3.75rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
+            <h1 className="text-ink text-[clamp(2.25rem,4.4vw+1rem,3.75rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-balance">
               Your Shopify store, now in your customers&rsquo; pocket.
             </h1>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-6 max-w-[46ch] text-pretty text-lg text-ink-muted">
-              Mobile Connect turns your existing store into your own branded
-              Android and iOS app, built from your live Shopify catalog. No
-              dev work required on your side.
+            <p className="text-ink-muted mt-6 max-w-[46ch] text-lg text-pretty">
+              Mobile Connect turns your existing store into your own branded Android and iOS app,
+              built from your live Shopify catalog. No dev work required on your side.
             </p>
           </Reveal>
 
@@ -44,11 +43,8 @@ export function Hero() {
           <Reveal delay={0.24}>
             <ul className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3">
               {TRUST_POINTS.map(({ icon: Icon, label }) => (
-                <li
-                  key={label}
-                  className="flex items-center gap-2 text-sm text-ink-muted"
-                >
-                  <Icon className="size-4 text-accent" aria-hidden />
+                <li key={label} className="text-ink-muted flex items-center gap-2 text-sm">
+                  <Icon className="text-accent size-4" aria-hidden />
                   {label}
                 </li>
               ))}
@@ -56,10 +52,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <Reveal
-          delay={0.14}
-          className="relative mx-auto w-full max-w-[420px] sm:pb-16 lg:pb-24"
-        >
+        <Reveal delay={0.14} className="relative mx-auto w-full max-w-[420px] sm:pb-16 lg:pb-24">
           <PhoneMockup
             src={SCREENSHOTS.home.src}
             alt={SCREENSHOTS.home.alt}
