@@ -170,8 +170,7 @@ export const RIVALS: Rival[] = [
     has: ["reviews"],
     page: {
       tag: "Self-serve",
-      summary:
-        "OneMobile is a no-code, self-serve app builder with a live preview of your app.",
+      summary: "OneMobile is a no-code, self-serve app builder with a live preview of your app.",
       model: "Self-serve. You build the app yourself in a no-code drag-and-drop builder.",
       price:
         "Plan prices aren't shown on the page we checked. It offers a free plan and a 14-day free trial.",
@@ -194,10 +193,10 @@ export const RIVALS: Rival[] = [
     has: ["build", "cart"],
     page: {
       tag: "Done-for-you",
-      summary:
-        "Venn Apps builds your app for you, like we do, with a bespoke design process.",
+      summary: "Venn Apps builds your app for you, like we do, with a bespoke design process.",
       model: "Done-for-you. Its site describes a “white-glove app build fully handled by us”.",
-      price: "Not published. Its site mentions fixed monthly pricing with no success fees; you contact them for a quote.",
+      price:
+        "Not published. Its site mentions fixed monthly pricing with no success fees; you contact them for a quote.",
       facts: [
         "Bespoke design process with dedicated designers and account managers.",
         "Unlimited push with segmentation, scheduling, and abandoned-cart, back-in-stock and welcome flows.",

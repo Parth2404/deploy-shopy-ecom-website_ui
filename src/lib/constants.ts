@@ -1,7 +1,6 @@
 export const SITE_NAME = "Mobile Connect";
 
-export const SHOPIFY_INSTALL_URL =
-  process.env.NEXT_PUBLIC_SHOPIFY_INSTALL_URL || "";
+export const SHOPIFY_INSTALL_URL = process.env.NEXT_PUBLIC_SHOPIFY_INSTALL_URL || "";
 
 export const NAV_LINKS = [
   { href: "/#compare", label: "Web vs. app" },

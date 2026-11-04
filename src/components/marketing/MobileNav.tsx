@@ -18,7 +18,7 @@ export function MobileNav() {
       <button
         type="button"
         popoverTarget="mobile-nav"
-        className="flex size-10 items-center justify-center rounded-full text-ink hover:bg-surface-2"
+        className="text-ink hover:bg-surface-2 flex size-10 items-center justify-center rounded-full"
         aria-label="Open menu"
       >
         <Menu className="size-5" aria-hidden />
@@ -28,14 +28,14 @@ export function MobileNav() {
         id="mobile-nav"
         popover="auto"
         ref={panelRef}
-        className="m-0 h-dvh max-h-none w-full max-w-none border-none bg-surface p-6 backdrop:bg-ink/40"
+        className="bg-surface backdrop:bg-ink/40 m-0 h-dvh max-h-none w-full max-w-none border-none p-6"
       >
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-ink-muted">Menu</span>
+          <span className="text-ink-muted text-sm font-medium">Menu</span>
           <button
             type="button"
             onClick={close}
-            className="flex size-10 items-center justify-center rounded-full text-ink hover:bg-surface-2"
+            className="text-ink hover:bg-surface-2 flex size-10 items-center justify-center rounded-full"
             aria-label="Close menu"
           >
             <X className="size-5" aria-hidden />
@@ -48,7 +48,7 @@ export function MobileNav() {
               key={link.href}
               href={link.href}
               onClick={close}
-              className="rounded-lg px-3 py-3 text-lg font-medium text-ink hover:bg-surface-2"
+              className="text-ink hover:bg-surface-2 rounded-lg px-3 py-3 text-lg font-medium"
             >
               {link.label}
             </Link>
@@ -62,7 +62,7 @@ export function MobileNav() {
           <Link
             href="/#contact"
             onClick={close}
-            className="text-center text-sm font-medium text-ink-muted hover:text-ink"
+            className="text-ink-muted hover:text-ink text-center text-sm font-medium"
           >
             Or get in touch first
           </Link>

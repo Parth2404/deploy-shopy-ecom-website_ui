@@ -1,11 +1,4 @@
-import {
-  RefreshCw,
-  ShoppingCart,
-  UserCircle,
-  Bell,
-  Users,
-  ScrollText,
-} from "lucide-react";
+import { RefreshCw, ShoppingCart, UserCircle, Bell, Users, ScrollText } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -45,14 +38,14 @@ export function Features() {
       <Container>
         <div>
           <Reveal>
-            <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+            <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
               Built on your real Shopify data
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-4 text-base text-ink-muted">
-              Every feature below runs against Shopify&rsquo;s own APIs —
-              nothing here is simulated or cached indefinitely.
+            <p className="text-ink-muted mt-4 text-base">
+              Every feature below runs against Shopify&rsquo;s own APIs — nothing here is simulated
+              or cached indefinitely.
             </p>
           </Reveal>
         </div>
@@ -60,39 +53,29 @@ export function Features() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
           <Reveal
             delay={0.12}
-            className="rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-sm)]"
+            className="border-border bg-surface rounded-2xl border p-8 shadow-[var(--shadow-sm)]"
           >
-            <span className="flex size-11 items-center justify-center rounded-xl bg-accent-soft">
-              <RefreshCw className="size-5 text-accent" aria-hidden />
+            <span className="bg-accent-soft flex size-11 items-center justify-center rounded-xl">
+              <RefreshCw className="text-accent size-5" aria-hidden />
             </span>
-            <h3 className="mt-5 text-xl font-semibold text-ink">
-              Live product catalog sync
-            </h3>
-            <p className="mt-3 max-w-[38ch] text-[0.9375rem] leading-relaxed text-ink-muted">
-              Add a product, change a price, or go out of stock in Shopify — it
-              reflects in the app automatically. Your Shopify admin stays the
-              single source of truth; the app is a mirror, not a second
-              inventory to manage.
+            <h3 className="text-ink mt-5 text-xl font-semibold">Live product catalog sync</h3>
+            <p className="text-ink-muted mt-3 max-w-[38ch] text-[0.9375rem] leading-relaxed">
+              Add a product, change a price, or go out of stock in Shopify — it reflects in the app
+              automatically. Your Shopify admin stays the single source of truth; the app is a
+              mirror, not a second inventory to manage.
             </p>
           </Reveal>
 
           <Stagger
             as="ul"
-            className="divide-y divide-border rounded-2xl border border-border bg-surface"
+            className="divide-border border-border bg-surface divide-y rounded-2xl border"
           >
             {SECONDARY_FEATURES.map(({ icon: Icon, title, body }) => (
               <StaggerItem as="li" key={title} className="flex gap-4 p-6">
-                <Icon
-                  className="mt-0.5 size-5 shrink-0 text-accent"
-                  aria-hidden
-                />
+                <Icon className="text-accent mt-0.5 size-5 shrink-0" aria-hidden />
                 <div>
-                  <h3 className="text-[0.9375rem] font-semibold text-ink">
-                    {title}
-                  </h3>
-                  <p className="mt-1 text-[0.875rem] leading-relaxed text-ink-muted">
-                    {body}
-                  </p>
+                  <h3 className="text-ink text-[0.9375rem] font-semibold">{title}</h3>
+                  <p className="text-ink-muted mt-1 text-[0.875rem] leading-relaxed">{body}</p>
                 </div>
               </StaggerItem>
             ))}
