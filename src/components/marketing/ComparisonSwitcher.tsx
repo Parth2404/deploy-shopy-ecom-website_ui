@@ -12,7 +12,7 @@ export function ComparisonSwitcher() {
 
   return (
     <div className="lg:hidden">
-      <p id="compare-with" className="text-sm font-medium text-ink-muted">
+      <p id="compare-with" className="text-ink-muted text-sm font-medium">
         Compare Mobile Connect with
       </p>
       <div

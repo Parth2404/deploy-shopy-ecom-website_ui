@@ -24,14 +24,14 @@ export function HowItWorks() {
       <Container>
         <div>
           <Reveal>
-            <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+            <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
               From Shopify store to app store, in three steps
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-4 text-base text-ink-muted">
-              This is the actual process, start to finish — not a simplified
-              marketing version of it.
+            <p className="text-ink-muted mt-4 text-base">
+              This is the actual process, start to finish — not a simplified marketing version of
+              it.
             </p>
           </Reveal>
         </div>
@@ -41,16 +41,12 @@ export function HowItWorks() {
             <StaggerItem as="li" key={step.title} className="relative">
               <span
                 aria-hidden
-                className="block text-[2.75rem] font-semibold leading-none tracking-[-0.03em] text-accent-soft-strong"
+                className="text-accent-soft-strong block text-[2.75rem] leading-none font-semibold tracking-[-0.03em]"
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 text-lg font-semibold text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-muted">
-                {step.body}
-              </p>
+              <h3 className="text-ink mt-4 text-lg font-semibold">{step.title}</h3>
+              <p className="text-ink-muted mt-2 text-[0.9375rem] leading-relaxed">{step.body}</p>
             </StaggerItem>
           ))}
         </Stagger>

@@ -36,25 +36,23 @@ export function Faq() {
     <Section id="faq" tone="canvas" border>
       <Container>
         <Reveal>
-          <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+          <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
             Questions merchants ask us
           </h2>
         </Reveal>
 
-        <Stagger className="mt-8 divide-y divide-border border-t border-border">
+        <Stagger className="divide-border border-border mt-8 divide-y border-t">
           {FAQS.map(({ q, a }) => (
             <StaggerItem key={q}>
               <details className="group py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[0.9375rem] font-medium text-ink marker:content-none">
+                <summary className="text-ink flex cursor-pointer list-none items-center justify-between gap-4 text-[0.9375rem] font-medium marker:content-none">
                   {q}
                   <ChevronDown
-                    className="size-4 shrink-0 text-ink-subtle transition-transform duration-200 ease-out group-open:rotate-180"
+                    className="text-ink-subtle size-4 shrink-0 transition-transform duration-200 ease-out group-open:rotate-180"
                     aria-hidden
                   />
                 </summary>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-muted">
-                  {a}
-                </p>
+                <p className="text-ink-muted mt-3 text-[0.9375rem] leading-relaxed">{a}</p>
               </details>
             </StaggerItem>
           ))}

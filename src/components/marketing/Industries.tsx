@@ -6,16 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { SCREENSHOTS } from "@/lib/screenshots";
 import { PhoneMockup } from "./PhoneMockup";
-import { motion } from "motion/react";
-import {
-  Shirt,
-  Gem,
-  Sparkles,
-  ShoppingBag,
-  Home,
-  Store,
-  LayoutGrid,
-} from "lucide-react";
+import { Shirt, Gem, Sparkles, ShoppingBag, Home, Store, LayoutGrid } from "lucide-react";
 
 const CATEGORIES = [
   { name: "Fashion & apparel", icon: Shirt },
@@ -30,27 +21,26 @@ const CATEGORIES = [
 export function Industries() {
   return (
     <Section id="industries" tone="surface" border className="overflow-hidden">
-      <Container className="grid lg:grid-cols-[1fr_0.9fr] lg:items-center ">
+      <Container className="grid lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div className="relative z-10">
           <Reveal>
-            <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+            <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
               Works well for most Shopify stores
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-5 text-[1.0625rem] leading-relaxed text-ink-muted">
-              We haven&rsquo;t published client case studies yet — we&rsquo;re
-              early. But the underlying build (Shopify catalog, cart, and
-              customer accounts, wrapped in a native app) fits any product-based
-              Shopify store, including these:
+            <p className="text-ink-muted mt-5 text-[1.0625rem] leading-relaxed">
+              We haven&rsquo;t published client case studies yet — we&rsquo;re early. But the
+              underlying build (Shopify catalog, cart, and customer accounts, wrapped in a native
+              app) fits any product-based Shopify store, including these:
             </p>
           </Reveal>
 
           <Stagger className="mt-10 flex flex-wrap gap-3">
             {CATEGORIES.map((category) => (
               <StaggerItem key={category.name}>
-                <span className="group flex cursor-default items-center gap-2.5 rounded-full border border-border bg-canvas/80 px-4 py-2.5 text-sm font-medium text-ink backdrop-blur-sm transition-all hover:scale-105 hover:border-ink/20 hover:bg-canvas hover:shadow-sm">
-                  <category.icon className="h-[1.125rem] w-[1.125rem] text-ink-muted transition-colors group-hover:text-ink" />
+                <span className="group border-border bg-canvas/80 text-ink hover:border-ink/20 hover:bg-canvas flex cursor-default items-center gap-2.5 rounded-full border px-4 py-2.5 text-sm font-medium backdrop-blur-sm transition-all hover:scale-105 hover:shadow-sm">
+                  <category.icon className="text-ink-muted group-hover:text-ink h-[1.125rem] w-[1.125rem] transition-colors" />
                   {category.name}
                 </span>
               </StaggerItem>
@@ -64,10 +54,7 @@ export function Industries() {
           </div> */}
           <Reveal delay={0.12} className="relative z-10">
             <div className="relative">
-              <PhoneMockup
-                src={SCREENSHOTS.search.src}
-                alt={SCREENSHOTS.search.alt}
-              />
+              <PhoneMockup src={SCREENSHOTS.search.src} alt={SCREENSHOTS.search.alt} />
             </div>
           </Reveal>
         </div>

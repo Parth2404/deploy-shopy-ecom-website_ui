@@ -35,32 +35,30 @@ export function WebVsApp() {
         <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
           <div>
             <Reveal>
-              <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
-                Right now, your store lives in a browser tab. We put it on
-                the home screen instead.
+              <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
+                Right now, your store lives in a browser tab. We put it on the home screen instead.
               </h2>
             </Reveal>
             <Reveal delay={0.08}>
-              <p className="mt-4 max-w-[46ch] text-base leading-relaxed text-ink-muted">
-                That&rsquo;s really the whole idea: the same store, the same
-                products, the same Shopify checkout underneath — just
-                sitting somewhere your customers open every day, the same
-                way they open Instagram or their bank app.
+              <p className="text-ink-muted mt-4 max-w-[46ch] text-base leading-relaxed">
+                That&rsquo;s really the whole idea: the same store, the same products, the same
+                Shopify checkout underneath — just sitting somewhere your customers open every day,
+                the same way they open Instagram or their bank app.
               </p>
             </Reveal>
 
             <Reveal delay={0.16}>
-              <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)] sm:overflow-x-auto">
+              <div className="border-border bg-surface mt-8 overflow-hidden rounded-2xl border shadow-[var(--shadow-sm)] sm:overflow-x-auto">
                 <table className="block w-full border-collapse text-left text-sm sm:table sm:min-w-[32rem]">
                   <thead className="hidden sm:table-header-group">
                     <tr className="bg-surface-2">
-                      <th scope="col" className="p-4 font-medium text-ink-muted">
+                      <th scope="col" className="text-ink-muted p-4 font-medium">
                         &nbsp;
                       </th>
-                      <th scope="col" className="p-4 font-semibold text-ink">
+                      <th scope="col" className="text-ink p-4 font-semibold">
                         Your website today
                       </th>
-                      <th scope="col" className="p-4 font-semibold text-accent">
+                      <th scope="col" className="text-accent p-4 font-semibold">
                         With the app
                       </th>
                     </tr>
@@ -69,29 +67,23 @@ export function WebVsApp() {
                     {ROWS.map((row) => (
                       <tr
                         key={row.label}
-                        className="block border-t border-border p-4 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t"
+                        className="border-border block border-t p-4 first:border-t-0 sm:table-row sm:p-0 sm:first:border-t"
                       >
                         <th
                           scope="row"
-                          className="block p-0 pb-2 align-top font-medium text-ink sm:table-cell sm:p-4"
+                          className="text-ink block p-0 pb-2 align-top font-medium sm:table-cell sm:p-4"
                         >
                           {row.label}
                         </th>
-                        <td className="block p-0 py-1.5 align-top text-ink-muted sm:table-cell sm:p-4">
+                        <td className="text-ink-muted block p-0 py-1.5 align-top sm:table-cell sm:p-4">
                           <span className="flex items-start gap-2">
-                            <X
-                              className="mt-0.5 size-4 shrink-0 text-ink-subtle"
-                              aria-hidden
-                            />
+                            <X className="text-ink-subtle mt-0.5 size-4 shrink-0" aria-hidden />
                             {row.web}
                           </span>
                         </td>
-                        <td className="block p-0 py-1.5 align-top text-ink sm:table-cell sm:p-4">
+                        <td className="text-ink block p-0 py-1.5 align-top sm:table-cell sm:p-4">
                           <span className="flex items-start gap-2">
-                            <Check
-                              className="mt-0.5 size-4 shrink-0 text-accent"
-                              aria-hidden
-                            />
+                            <Check className="text-accent mt-0.5 size-4 shrink-0" aria-hidden />
                             {row.app}
                           </span>
                         </td>
@@ -104,11 +96,7 @@ export function WebVsApp() {
           </div>
 
           <Reveal delay={0.1} className="justify-self-center lg:sticky lg:top-24">
-            <PhoneMockup
-              src={SCREENSHOTS.cart.src}
-              alt={SCREENSHOTS.cart.alt}
-              className="w-fit"
-            />
+            <PhoneMockup src={SCREENSHOTS.cart.src} alt={SCREENSHOTS.cart.alt} className="w-fit" />
           </Reveal>
         </div>
       </Container>

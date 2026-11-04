@@ -9,14 +9,14 @@ export function Contact() {
     <Section id="contact" tone="surface" border>
       <Container className="grid gap-12 lg:grid-cols-[0.8fr_1fr] lg:gap-16">
         <Reveal>
-          <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+          <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
             Not ready to install? Talk to us first.
           </h2>
-          <p className="mt-4 max-w-[40ch] text-base text-ink-muted">
-            Tell us about your store and what you&rsquo;re hoping for. A real
-            person on our team will reply by email.
+          <p className="text-ink-muted mt-4 max-w-[40ch] text-base">
+            Tell us about your store and what you&rsquo;re hoping for. A real person on our team
+            will reply by email.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-muted">
+          <div className="text-ink-muted mt-6 flex flex-wrap items-center gap-3 text-sm">
             <span>Ready to start now?</span>
             <InstallButton variant="secondary" size="md">
               Install instead

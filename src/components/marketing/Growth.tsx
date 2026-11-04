@@ -33,35 +33,32 @@ export function Growth() {
       <Container>
         <div className="">
           <Reveal>
-            <h2 className="text-balance text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-ink">
+            <h2 className="text-ink text-[clamp(1.75rem,2.4vw+1rem,2.5rem)] font-semibold tracking-[-0.02em] text-balance">
               What a native app tends to change for a store
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="mt-4 text-base text-ink-muted">
-              These are widely observed patterns for stores that add a native
-              app alongside their website — general trends, not a guarantee for
-              every store.
+            <p className="text-ink-muted mt-4 text-base">
+              These are widely observed patterns for stores that add a native app alongside their
+              website — general trends, not a guarantee for every store.
             </p>
           </Reveal>
         </div>
 
-        <Stagger className="mt-16 grid gap-8 lg:gap-10 sm:grid-cols-2">
+        <Stagger className="mt-16 grid gap-8 sm:grid-cols-2 lg:gap-10">
           {BENEFITS.map(({ icon: Icon, label, body }) => (
             <StaggerItem
               key={label}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink/[0.06] bg-canvas p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:border-ink/[0.12] hover:shadow-[0_24px_50px_-15px_rgba(0,0,0,0.06)]"
+              className="group border-ink/[0.06] bg-canvas hover:border-ink/[0.12] relative flex flex-col overflow-hidden rounded-2xl border p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_50px_-15px_rgba(0,0,0,0.06)]"
             >
               {/* Animated radial gradient blob */}
-              <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-ink/[0.04] to-transparent blur-3xl transition-all duration-700 ease-out group-hover:scale-[1.5] group-hover:from-ink/[0.08]" />
+              <div className="from-ink/[0.04] group-hover:from-ink/[0.08] absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br to-transparent blur-3xl transition-all duration-700 ease-out group-hover:scale-[1.5]" />
               {/* Elegant dot pattern that fades in on hover */}
               <svg
                 className="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-700 group-hover:opacity-30"
                 style={{
-                  maskImage:
-                    "radial-gradient(circle at top right, white, transparent 65%)",
-                  WebkitMaskImage:
-                    "radial-gradient(circle at top right, white, transparent 65%)",
+                  maskImage: "radial-gradient(circle at top right, white, transparent 65%)",
+                  WebkitMaskImage: "radial-gradient(circle at top right, white, transparent 65%)",
                 }}
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -77,25 +74,19 @@ export function Growth() {
                     <circle cx="2" cy="2" r="1.5" className="fill-ink" />
                   </pattern>
                 </defs>
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill={`url(#dots-${label.replace(/\\s/g, "")})`}
-                />
+                <rect width="100%" height="100%" fill={`url(#dots-${label.replace(/\\s/g, "")})`} />
               </svg>
-              <div className="relative z-10 mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.25rem] bg-surface ring-1 ring-ink/[0.05] shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-ink group-hover:shadow-lg group-hover:shadow-ink/20 group-hover:ring-ink">
+              <div className="bg-surface ring-ink/[0.05] group-hover:bg-ink group-hover:shadow-ink/20 group-hover:ring-ink relative z-10 mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.25rem] shadow-sm ring-1 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg">
                 <Icon
-                  className="size-5 text-ink transition-colors duration-500 group-hover:text-canvas"
+                  className="text-ink group-hover:text-canvas size-5 transition-colors duration-500"
                   aria-hidden
                 />
               </div>
               <div className="relative z-10 flex flex-1 flex-col">
-                <h3 className="text-[1.35rem] font-bold tracking-tight text-ink transition-colors duration-300">
+                <h3 className="text-ink text-[1.35rem] font-bold tracking-tight transition-colors duration-300">
                   {label}
                 </h3>
-                <p className="mt-2 text-[1.0625rem] leading-relaxed text-ink-muted">
-                  {body}
-                </p>
+                <p className="text-ink-muted mt-2 text-[1.0625rem] leading-relaxed">{body}</p>
               </div>
             </StaggerItem>
           ))}

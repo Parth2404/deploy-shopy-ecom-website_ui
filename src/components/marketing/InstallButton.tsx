@@ -5,10 +5,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SHOPIFY_INSTALL_URL } from "@/lib/constants";
 import { trackViaFbPixel } from "@/lib/utils";
 
-type InstallButtonProps = Omit<
-  ComponentProps<typeof ButtonLink>,
-  "href" | "target" | "rel"
->;
+type InstallButtonProps = Omit<ComponentProps<typeof ButtonLink>, "href" | "target" | "rel">;
 
 export function InstallButton({ onClick, ...props }: InstallButtonProps) {
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {

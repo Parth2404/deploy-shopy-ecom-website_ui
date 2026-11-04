@@ -46,8 +46,7 @@ export async function submitContact(
     });
     return {
       status: "error",
-      message:
-        "We couldn't send your message right now. Please try again shortly.",
+      message: "We couldn't send your message right now. Please try again shortly.",
     };
   }
 
@@ -68,8 +67,7 @@ export async function submitContact(
     console.error("Contact form send failed:", error);
     return {
       status: "error",
-      message:
-        "We couldn't send your message right now. Please try again shortly.",
+      message: "We couldn't send your message right now. Please try again shortly.",
     };
   }
 }

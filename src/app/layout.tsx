@@ -74,7 +74,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans text-ink">
+      <body className="text-ink flex min-h-full flex-col font-sans">
         {/* Facebook Pixel Code */}
         <noscript>
           <img
@@ -82,11 +82,12 @@ export default function RootLayout({
             width="1"
             style={{ display: "none" }}
             src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
           />
         </noscript>
         <a
           href="#main-content"
-          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:z-tooltip focus-visible:rounded-lg focus-visible:bg-ink focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-medium focus-visible:text-white"
+          className="focus-visible:z-tooltip focus-visible:bg-ink sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:rounded-lg focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-medium focus-visible:text-white"
         >
           Skip to main content
         </a>
